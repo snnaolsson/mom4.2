@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/index.js" type="module"></script>
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Moment 4.2 - Autentisering och säkerhet</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Startsida</a></li>
+                <li><a href="adduser.html">Lägg till användare</a></li>
+                <li><a href="userside.html" id="userSite">Medlemssida</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div id="login-div">
+            <h2>Logga in</h2>
+            <p id="msg"></p>
+            <form id="login-form" method="POST">
+
+                <label for="username">Användarnamn: </label>
+                <input type="text" id="username" name="username">
+                <br>
+                <label for="password">Lösenord: </label> 
+                <input for="password" type="password" id="password" name="password">
+                <br>
+                <input type="submit" id="loginBtn" value="Logga in">
+
+            </form>
+        </div>
+    </main>
+    
+</body>
+</html>
