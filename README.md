@@ -10,5 +10,5 @@
 ## För att komma igång 
 - npm run build för att bygga sidan med parcel
 - npm run start för att starta servern
-**När man bygger/startar sidan första gången så kan man behöva specificera att man vill starta/bygga undersidan userside.html. Ibland skapar inte parcel den automatiskt eftersom den inte finns länkad i navigeringen och när man loggat in då så hamnar man bara tillbaka på index.html.**
+
 
