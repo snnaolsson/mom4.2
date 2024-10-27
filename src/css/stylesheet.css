@@ -1,0 +1,82 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+body{
+    background-color: rgb(50, 17, 17);
+    color: rgb(255, 255, 255);
+}
+header{
+    background-color: rgb(104, 24, 24);
+
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+}
+
+#login-div{
+    background-color: rgb(104, 24, 24);
+    text-align: center;
+    width: 60%;
+    margin: auto;
+    margin-top: 10%;
+    padding: 25px;
+}
+    
+#loginBtn, #addBtn, #logOut{
+    background-color: rgb(50, 17, 17);
+    color: wheat;
+    padding: 10px 25px;
+    margin: 15px;
+    font-size: 16px;
+    font-weight: bold;
+}
+#loginBtn:hover, #addBtn:hover, #logOut:hover{
+    background-color: rgb(154, 20, 20);
+}
+li{
+    list-style: none;
+    display: inline;
+
+}
+a{
+    color: rgb(214, 205, 192);
+    text-decoration: none;
+    padding: 0 10px;
+    
+}
+a:hover{
+    color: brown;
+    font-size: 17px;
+text-decoration: overline;}
+ul{
+    display: inline;
+}
+
+#create-user{
+    background-color: rgb(104, 24, 24);
+    text-align: center;
+    width: 60%;
+    margin: auto;
+    margin-top: 25px;
+    padding: 25px;
+}
+h2{
+    text-align: center;
+    margin-top: 5%;
+}
+
+#memberMessage{
+text-align: center;
+padding: 5px;
+margin: 5px;
+
+}
+#logOut{
+    background-color: rgb(154, 20, 20);
+    margin-left: 45%;
+}
+#logOut:hover{
+    background-color: rgb(95, 30, 30);
+}

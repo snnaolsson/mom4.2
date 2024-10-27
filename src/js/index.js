@@ -5,11 +5,9 @@ const loginUsername = document.getElementById('username');
 const loginPassword = document.getElementById('password');
 const message = document.getElementById('msg');
 let token = localStorage.getItem('token');
-let userBtn = document.getElementById('userSite');
 
 loginBtn.addEventListener('click', userLogin);
-userBtn.addEventListener('click', accessUserside);
-console.log(localStorage);
+console.log("index rad 10", localStorage);
 
 async function userLogin(e) {
     e.preventDefault();
@@ -29,29 +27,33 @@ async function userLogin(e) {
         let data = await response.json();
         if (!response.ok) {
             message.textContent = 'Inloggning misslyckades';
-            throw new error('Misslyckad inloggning');
+            console.log("Funkar här, rad 30");
+            throw new Error('Misslyckad inloggning');
         }
 
         if (response.status === 200) {
             localStorage.setItem('token', data.response.token);
             
+            console.log("funkr här rad 40");
             accessUserside();
-            window.location.href = 'userside.html';
+            window.location.replace = 'userside.html';
+            
+           
 
         }
     } catch (error) {
         message.textContent = 'fel användarnamn eller lösenord.';
     }
 }
-async function accessUserside(e) {
-    e.preventDefault();
+async function accessUserside() {
+    
   
     try {
         const token = localStorage.getItem('token');
         
         if (!token) {
             window.alert('Du måste vara inloggad för att besöka användarsidan!');
-            window.location.href = 'login.html';  // Omdirigera till inloggningssidan om ingen token finns
+            window.location.href = 'index.html';  // Omdirigera till inloggningssidan om ingen token finns
             return;
         }
         
@@ -65,19 +67,24 @@ async function accessUserside(e) {
         });
 
         if (!response.ok) {
-            message.textContent = 'Nej';
-            throw new Error('Nej');  // Kasta ett error om responsen inte är OK
+            console.log("fel i index rad 68");
+            throw new Error('Access denied');  // Kasta ett error om responsen inte är OK
+    
         }
 
         let data = await response.json();
+        console.log("Funkar till rad 74");
 
         if (response.status === 200) {
-            console.log(data);
+            console.log("funkar till rad 79");
+            console.log("Åtkomst beviljad:", data);
             window.location.href = 'userside.html';  // Omdirigera till användarsidan
+            
         }
     } catch (error) {
-        console.log(error);
+        console.log("Här går det fel");
         window.location.href = 'index.html';  // Omdirigera till startsidan om något går fel
+        
     }
 }
 
