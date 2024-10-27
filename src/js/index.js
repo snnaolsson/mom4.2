@@ -7,7 +7,6 @@ const message = document.getElementById('msg');
 let token = localStorage.getItem('token');
 
 loginBtn.addEventListener('click', userLogin);
-console.log("index rad 10", localStorage);
 
 async function userLogin(e) {
     e.preventDefault();
@@ -36,7 +35,7 @@ async function userLogin(e) {
             
             console.log("funkr här rad 40");
             accessUserside();
-            window.location.replace = 'userside.html';
+            window.location.href = 'userside.html';
             
            
 
@@ -67,22 +66,19 @@ async function accessUserside() {
         });
 
         if (!response.ok) {
-            console.log("fel i index rad 68");
             throw new Error('Access denied');  // Kasta ett error om responsen inte är OK
     
         }
 
         let data = await response.json();
-        console.log("Funkar till rad 74");
+
 
         if (response.status === 200) {
-            console.log("funkar till rad 79");
             console.log("Åtkomst beviljad:", data);
             window.location.href = 'userside.html';  // Omdirigera till användarsidan
             
         }
     } catch (error) {
-        console.log("Här går det fel");
         window.location.href = 'index.html';  // Omdirigera till startsidan om något går fel
         
     }
